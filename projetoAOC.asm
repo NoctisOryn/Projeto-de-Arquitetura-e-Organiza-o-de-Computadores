@@ -55,21 +55,21 @@ maior:
 verificado:
 
     #Verificar os nao bissextos
-    li $t0, 1
     
 volta:
     bgt $t1, $t2, encerrar
+
     li $t3, 4
-    rem $t3, $t1, $t3
+    rem $t4, $t1, $t3
+    bne $t4, $zero, nao_bissexto
     
-    bne $t3, $zero, nao_bissexto
     li $t3, 100
-    rem $t3, $t1
-    bne $t3, $zero, final
+    rem $t4, $t1, $t3
+    bne $t4, $zero, final
 
     li $t3, 400
-    rem $t3, $t1
-    bne $t3, $zero, nao_bissexto
+    rem $t4, $t1, $t3
+    bne $t4, $zero, nao_bissexto
     
     j final
     
