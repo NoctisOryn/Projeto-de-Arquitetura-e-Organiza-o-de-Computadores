@@ -60,18 +60,15 @@ verificado:
 volta:
     bgt $t1, $t2, encerrar
     li $t3, 4
-    div $t1, $t3
-    mfhi $t3
+    rem $t3, $t1, $t3
     
     bne $t3, $zero, nao_bissexto
     li $t3, 100
-    div $t1, $t3
-    mfhi $t3
+    rem $t3, $t1
     bne $t3, $zero, final
 
     li $t3, 400
-    div $t1, $t3
-    mfhi $t3
+    rem $t3, $t1
     bne $t3, $zero, nao_bissexto
     
     j final
